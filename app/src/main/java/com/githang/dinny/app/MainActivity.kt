@@ -1,6 +1,7 @@
 package com.githang.dinny.app
 
 import android.os.Bundle
+import android.os.Parcelable
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
@@ -18,6 +19,16 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
+
+        ActivityCtrl.newTestIntent(this)
+        ActivityCtrl.newTestIntent(
+            this, arrayListOf(title), ParcelObject("parcel object"),
+            longArrayOf(1L), 1.toByte(), doubleArrayOf(1.0), title, booleanArrayOf(true, false), 1, charArrayOf('a'),
+            byteArrayOf(2), arrayOf(ParcelObject("parcel array") as Parcelable), intent.extras,
+            arrayOf(title), floatArrayOf(1f), 2.0, intArrayOf(3), arrayOf("string"), shortArrayOf(123), true, "string",
+            1L, 'a', SerializableObject(), 3f, 4, intent, intent.extras
+        )
+        ActivityCtrl.startTestActivity(this)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
