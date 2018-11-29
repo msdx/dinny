@@ -20,7 +20,7 @@ class ProtocolMethod {
     private ExtraHandler[] extraHandlers;
     private boolean start;
 
-    public ProtocolMethod(Class<? extends Activity> target, ExtraHandler[] extraHandlers, boolean start) {
+    private ProtocolMethod(Class<? extends Activity> target, ExtraHandler[] extraHandlers, boolean start) {
         this.target = target;
         this.extraHandlers = extraHandlers;
         this.start = start;
