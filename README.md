@@ -1,6 +1,8 @@
 Dinny
 ===
 
+[ ![Download](https://api.bintray.com/packages/msdx/maven/Dinny/images/download.svg) ](https://bintray.com/msdx/maven/Dinny/_latestVersion)
+
 Dinny是一个处理Android中Activity跳转的库。
 
 # Dinny 能做什么
@@ -66,3 +68,9 @@ interface ActivityProtocol {
 
 从其他界面跳转到一个界面来，需要传什么数据，可以看作是向这个界面跳转的一种协议。而将这些协议声明为接口里的方法，也就是把它们协议化，一可以简化代码，二可以提高代码阅读性，三则可以把一个功能模块下的所有界面跳转都进行集中管理，便于维护。
 而这个接口可以认为是这个模块下的界面向外开放的协议，它是这个模块内的界面所期望的跳转方式。
+
+# 获取 Dinny
+
+```groovy
+implementation 'com.githang:dinny:0.1'
+```
