@@ -72,5 +72,5 @@ interface ActivityProtocol {
 # 获取 Dinny
 
 ```groovy
-implementation 'com.githang:dinny:0.1'
+implementation 'com.githang:dinny:0.1.1'
 ```
