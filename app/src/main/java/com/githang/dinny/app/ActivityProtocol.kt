@@ -17,6 +17,10 @@ interface ActivityProtocol {
     @ToActivity(TestActivity::class)
     fun newTestIntent(context: Context): Intent
 
+    // would be failed because Intent.putExtra method doesn't support HashMap type.
+    @ToActivity(TestActivity::class)
+    fun newTestIntent(context: Context, @Extra("map") map: HashMap<String, String>): Intent
+
     @ToActivity(TestActivity::class)
     fun newTestIntent(
         context: Context,
