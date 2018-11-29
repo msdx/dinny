@@ -30,10 +30,10 @@ class ProtocolMethod {
         final Context from = (Context) args[0];
         final Intent intent = new Intent(from, target);
         try {
-            for (int i = 1; i < extraHandlers.length; i++) {
-                final Object arg = args[i];
+            for (int i = 0; i < extraHandlers.length; i++) {
+                final Object arg = args[i + 1];
                 if (arg != null) {
-                    extraHandlers[i - 1].apply(intent, arg);
+                    extraHandlers[i].apply(intent, arg);
                 }
             }
         } catch (Exception e) {
