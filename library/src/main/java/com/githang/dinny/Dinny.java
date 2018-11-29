@@ -11,10 +11,11 @@ import java.util.Map;
  * @since 2018-11-27
  */
 public class Dinny {
-    private Dinny() {
-    }
 
     private static final Map<Method, ProtocolMethod> methodCache = new LinkedHashMap<>();
+
+    private Dinny() {
+    }
 
     @SuppressWarnings("unchecked")
     public static <T> T create(Class<T> protocol) {
@@ -32,13 +33,17 @@ public class Dinny {
     }
 
     private static ProtocolMethod loadProtocolMethod(Method method) {
+        ProtocolMethod result = methodCache.get(method);
+        if (result != null) {
+            return result;
+        }
         synchronized (methodCache) {
-            ProtocolMethod result = methodCache.get(method);
+            result = methodCache.get(method);
             if (result == null) {
                 result = new ProtocolMethod.Builder(method).build();
                 methodCache.put(method, result);
             }
-            return result;
         }
+        return result;
     }
 }
